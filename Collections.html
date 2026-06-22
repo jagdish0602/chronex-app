@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Collection Watches</title>
+  <link rel="stylesheet" href="style01.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      background:#050505;
+      color:white;
+      font-family:'Poppins',sans-serif;
+    }
+
+    a{
+      text-decoration:none;
+      color:white;
+    }
+
+    /* MAIN */
+
+    .container{
+      width:100%;
+      padding:50px 7%;
+    }
+
+    .heading{
+      margin-bottom:50px;
+    }
+
+    .heading p{
+      color:#888;
+      letter-spacing:4px;
+      font-size:12px;
+      margin-bottom:10px;
+    }
+
+    .heading h1{
+      font-size:70px;
+      font-family:'Cinzel',serif;
+      font-weight:500;
+    }
+
+    /* SHOP LAYOUT */
+
+    .shop-layout{
+      display:grid;
+      grid-template-columns:280px 1fr;
+      gap:40px;
+    }
+
+    /* SIDEBAR */
+
+    .sidebar{
+      position:sticky;
+      top:120px;
+      height:fit-content;
+    }
+
+    .sidebar h3{
+      margin-bottom:18px;
+      font-size:13px;
+      letter-spacing:3px;
+      color:#aaa;
+    }
+
+    .search-box{
+      width:100%;
+      padding:14px;
+      border-radius:30px;
+      border:1px solid rgba(255,255,255,0.08);
+      background:#0c0c0c;
+      color:white;
+      margin-bottom:40px;
+    }
+
+    .category{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+      margin-bottom:40px;
+    }
+
+    .category a{
+      color:#ccc;
+      transition:0.3s;
+    }
+
+    .category a:hover{
+      color:#868686;
+      transform:translateX(5px);
+    }
+
+    .range{
+      width:100%;
+      margin:20px 0 40px;
+    }
+
+    select{
+      width:100%;
+      padding:14px;
+      border-radius:12px;
+      background:#0c0c0c;
+      color:white;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    /* PRODUCTS */
+
+    .products{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:30px;
+    }
+
+    .card{
+      background:#0a0a0a;
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:18px;
+      overflow:hidden;
+      transition:0.4s;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      border-color:#252525;
+      box-shadow:0 0 30px rgba(15, 15, 15, 0.164);
+    }
+
+    .card img{
+      width:100%;
+      height:320px;
+      object-fit:cover;
+      display:block;
+    }
+
+    .card-content{
+      padding:22px;
+    }
+
+    .brand{
+      color:#888;
+      font-size:12px;
+      letter-spacing:3px;
+      margin-bottom:8px;
+    }
+
+    .watch-name{
+      font-size:28px;
+      font-family:'Cinzel',serif;
+      margin-bottom:15px;
+    }
+
+    .price{
+      color:#ccc;
+      font-size:20px;
+      font-weight:100;
+      font-family:'Cinzel',serif;
+      
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:1100px){
+
+      .products{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .heading h1{
+        font-size:55px;
+      }
+    }
+
+    @media(max-width:850px){
+
+      .shop-layout{
+        grid-template-columns:1fr;
+      }
+
+      .sidebar{
+        position:relative;
+        top:0;
+      }
+
+      .nav-links{
+        display:none;
+      }
+
+      .products{
+        grid-template-columns:1fr;
+      }
+
+      .heading h1{
+        font-size:45px;
+      }
+    }
+
+    @media(max-width:500px){
+
+      .heading h1{
+        font-size:38px;
+      }
+
+      .card img{
+        height:280px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+     <nav class="navbar">
+    <div class="logo">CHRONEX</div>
+    <ul class="nav-link">
+      <li><a href="Index01.html">HOME</a></li>
+      <li><a href="Collections.html">SHOP</a></li>
+      <li><a href="Collections.html">COLLECTIONS</a></li>
+      <li><a href="ADMIN.html">ADMIN</a></li>
+    </ul>
+    <div class="icons">
+      <a href="#"><i class=" fa-brands fa-sistrix"></i></a>
+      <a href="user.html"><i class="fa-regular fa-user"></i></a>
+      <a href="#"><i class="fa-regular fa-heart"></i></a>
+      <a href="#"  onclick="openCart()"><i class="fa-solid fa-bag-shopping"></i></a>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+
+  <section class="container">
+
+    <div class="heading">
+      <p>THE BOUTIQUE</p>
+      <h1>All Timepieces</h1>
+    </div>
+
+    <div class="shop-layout">
+
+      <!-- SIDEBAR -->
+
+      <aside class="sidebar">
+
+        <h3>SEARCH</h3>
+        <input type="text" class="search-box" placeholder="Search...">
+
+        <h3>CATEGORY</h3>
+
+        <div class="category">
+          <a href="#">All</a>
+          <a href="#">Diver</a>
+          <a href="#">Chronograph</a>
+          <a href="#">Dress</a>
+          <a href="#">Sport</a>
+          <a href="#">Skeleton</a>
+          <a href="#">Pilot</a>
+        </div>
+
+        <h3>MAX PRICE — ₹30,000</h3>
+
+        <input type="range" class="range">
+
+        <h3>SORT</h3>
+
+        <select>
+          <option>Featured</option>
+          <option>Newest</option>
+          <option>Price Low To High</option>
+          <option>Price High To Low</option>
+        </select>
+
+      </aside>
+
+      <!-- PRODUCTS -->
+
+      <div class="products">
+
+        <div class="card">
+          <img src="assets/6cdd908e-a3e1-4dbb-85db-68bb3ad10c56.jpeg" alt="watch">
+
+          <div class="card-content">
+            <div class="brand">MARINE</div>
+            <div class="watch-name">Abyss Diver 300</div>
+            <div class="price">₹58,450</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="assets/61e0c9bb-c4c9-4650-9ffa-5c3e1daa48b5.jpeg" alt="watch">
+
+          <div class="card-content">
+            <div class="brand">HERITAGE</div>
+            <div class="watch-name">Regent Chronograph</div>
+            <div class="price">₹18,200</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="assets/2273dd89-b5fa-41da-b776-b003ac0e5c16.jpeg" alt="watch">
+
+          <div class="card-content">
+            <div class="brand">HERITAGE</div>
+            <div class="watch-name">Noir Classique</div>
+            <div class="price">₹12,750</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="assets/ac89077b-25e3-483f-9340-f69fe6b58c52.jpeg" alt="watch">
+
+          <div class="card-content">
+            <div class="brand">VOYAGER</div>
+            <div class="watch-name">Atlas GMT</div>
+            <div class="price">₹22,890</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="assets/aeef785a-1363-4b61-ad57-9dc46743e7b5.jpeg" alt="watch">
+
+          <div class="card-content">
+            <div class="brand">ATELIER</div>
+            <div class="watch-name">Skeleton Tourbillon</div>
+            <div class="price">₹24,500</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="assets/b072a505-6c2a-4635-8a5f-e37c66bd279d.jpeg" alt="watch">
+
+          <div class="card-content">
+            <div class="brand">VOYAGER</div>
+            <div class="watch-name">Aviator Field</div>
+            <div class="price">₹12,250</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+<script src="script.js"></script>
+</body>
+</html>

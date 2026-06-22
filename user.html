@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Authentication</title>
+  <link rel="stylesheet" href="style01.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #020202;
+      font-family: 'Inter', sans-serif;
+      color: white;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+
+    
+       /* MAIN */
+    
+
+    .container {
+      width: 100%;
+      min-height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      padding: 120px 20px 40px;
+    }
+
+    .auth-card {
+      width: 430px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 22px;
+      padding: 45px 35px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 0 40px rgba(255, 255, 255, 0.03);
+
+    }
+
+    .small-text {
+      text-align: center;
+      color: #8d8d8d;
+      font-size: 10px;
+      letter-spacing: 5px;
+      margin-bottom: 15px;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 50px;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      margin-bottom: 30px;
+    }
+
+   
+       /* TOGGLE BUTTON */
+ 
+
+    .toggle-box {
+      width: 100%;
+      height: 52px;
+      border-radius: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      margin-bottom: 35px;
+      background: #0b0b0b;
+    }
+
+    .slider {
+      width: 50%;
+      height: 100%;
+      background: #d9d9df;
+      position: absolute;
+      left: 0;
+      top: 0;
+      border-radius: 40px;
+      transition: 0.4s ease;
+    }
+
+    .toggle-btn {
+      width: 50%;
+      border: none;
+      background: transparent;
+      color: #8d8d8d;
+      font-size: 11px;
+      letter-spacing: 3px;
+      cursor: pointer;
+      z-index: 2;
+      transition: 0.3s;
+    }
+
+    .toggle-btn.active {
+      color: #111;
+      font-weight: 600;
+    }
+
+     /* FORM */
+ 
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .input-group label {
+      font-size: 10px;
+      color: #8d8d8d;
+      letter-spacing: 4px;
+    }
+
+    .input-group input {
+      width: 100%;
+      height: 54px;
+      border-radius: 35px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: transparent;
+      padding: 0 20px;
+      color: white;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    .input-group input:focus {
+      border-color: #d8d8d8;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.08);
+    }
+
+    .submit-btn {
+      height: 56px;
+      border: none;
+      border-radius: 40px;
+      background: #d9d9df;
+      color: #111;
+      font-size: 11px;
+      letter-spacing: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .bottom-text {
+      text-align: center;
+      color: #8d8d8d;
+      font-size: 13px;
+      margin-top: 22px;
+    }
+
+    .bottom-text a {
+      color: white;
+    }
+
+    .back-home {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    .back-home a {
+      color: #8d8d8d;
+      letter-spacing: 4px;
+      font-size: 10px;
+    }
+
+ /* RESPONSIVE */
+ 
+
+    @media(max-width:768px) {
+
+      .navbar {
+        padding: 0 20px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .auth-card {
+        width: 100%;
+        max-width: 420px;
+        padding: 35px 22px;
+      }
+
+      .title {
+        font-size: 40px;
+      }
+
+    }
+
+    @media(max-width:480px) {
+
+      .container {
+        padding: 100px 12px 20px;
+      }
+
+      .auth-card {
+        padding: 28px 16px;
+      }
+
+      .title {
+        font-size: 34px;
+      }
+
+      .toggle-box {
+        height: 48px;
+      }
+
+      .input-group input {
+        height: 48px;
+      }
+
+      .submit-btn {
+        height: 50px;
+      }
+
+      .logo h2 {
+        font-size: 16px;
+        letter-spacing: 4px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+      <!-- NAVBAR -->
+  
+  <nav class="navbar">
+    <div class="logo">CHRONEX</div>
+    <ul class="nav-link">
+      <li><a href="Index01.html">HOME</a></li>
+      <li><a href="Collections.html">SHOP</a></li>
+      <li><a href="Collections.html">COLLECTIONS</a></li>
+      <li><a href="ADMIN.html">ADMIN</a></li>
+    </ul>
+    <div class="icons">
+      <a href="#"><i class=" fa-brands fa-sistrix"></i></a>
+      <a href="user.html"><i class="fa-regular fa-user"></i></a>
+      <a href="#"><i class="fa-regular fa-heart"></i></a>
+      <a href="#"><i class="fa-solid fa-bag-shopping"></i></a>
+    </div>
+  </nav>
+  
+
+  <div class="container">
+
+    <div class="auth-card">
+
+      <div class="small-text">
+        THE INNER CIRCLE
+      </div>
+
+      <h1 class="title" id="title">
+        Welcome Back
+      </h1>
+
+      <!-- TOGGLE -->
+
+      <div class="toggle-box">
+
+        <div class="slider" id="slider"></div>
+
+        <button class="toggle-btn active" id="loginBtn">
+          SIGN IN
+        </button>
+
+        <button class="toggle-btn" id="registerBtn">
+          REGISTER
+        </button>
+
+      </div>
+
+      <!-- FORM -->
+
+      <form class="form">
+
+        <!-- FULL NAME -->
+
+        <div class="input-group" id="nameField" style="display:none;">
+
+          <label>FULL NAME</label>
+
+          <input type="text" placeholder="Enter your name">
+
+        </div>
+
+        <!-- EMAIL -->
+
+        <div class="input-group">
+
+          <label>EMAIL</label>
+
+          <input type="email" placeholder="Enter your email">
+
+        </div>
+
+        <!-- PASSWORD -->
+
+        <div class="input-group">
+
+          <label>PASSWORD</label>
+
+          <input type="password" placeholder="Enter password">
+
+        </div>
+
+        <!-- BUTTON -->
+
+        <button type="submit" class="submit-btn" id="submitBtn">
+          SIGN IN
+        </button>
+
+      </form>
+
+      <!-- BOTTOM -->
+
+      <div class="bottom-text" id="bottomText">
+
+        New to CHRONEX?
+        <a href="#" id="openRegister">
+          Create one
+        </a>
+
+      </div>
+
+      <!-- BACK -->
+
+      <div class="back-home">
+
+        <a href="Index01.html">
+          ← RETURN TO HOME
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+  <!-- footer -->
+  <footer class="footer">
+    <div class="footer-top">
+
+      <div class="footer-brand">
+        <h2>CHRONEX</h2>
+        <p>
+          Master craftsmanship from Geneva. Every timepiece,
+          a quiet rebellion against time.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h4>MAISON</h4>
+        <a href="#">Heritage</a>
+        <a href="#">Atelier</a>
+        <a href="#">Craftsmanship</a>
+      </div>
+
+      <div class="footer-links">
+        <h4>BOUTIQUE</h4>
+        <a href="#">Shop All</a>
+        <a href="#">Cart</a>
+        <a href="#">Wishlist</a>
+      </div>
+
+      <div class="footer-links">
+        <h4>SERVICE</h4>
+        <a href="#">Contact</a>
+        <a href="#">Warranty</a>
+        <a href="#">Shipping</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 CHRONEX Manufactures. All rights reserved.</p>
+      <span>GENEVA — SWITZERLAND</span>
+    </div>
+  </footer>
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    const loginBtn = document.getElementById("loginBtn");
+    const registerBtn = document.getElementById("registerBtn");
+
+    const slider = document.getElementById("slider");
+
+    const title = document.getElementById("title");
+
+    const submitBtn = document.getElementById("submitBtn");
+
+    const bottomText = document.getElementById("bottomText");
+
+    const nameField = document.getElementById("nameField");
+
+    /* =========================
+       LOGIN FORM
+    ========================== */
+
+    function showLogin() {
+
+      slider.style.left = "0";
+
+      loginBtn.classList.add("active");
+
+      registerBtn.classList.remove("active");
+
+      title.innerText = "Welcome Back";
+
+      submitBtn.innerText = "SIGN IN";
+
+      nameField.style.display = "none";
+
+      bottomText.innerHTML = `
+        New to CHRONEX?
+        <a href="#" id="openRegister">
+          Create one
+        </a>
+      `;
+
+    }
+
+    /* =========================
+       REGISTER FORM
+    ========================== */
+
+    function showRegister() {
+
+      slider.style.left = "50%";
+
+      registerBtn.classList.add("active");
+
+      loginBtn.classList.remove("active");
+
+      title.innerText = "Create Account";
+
+      submitBtn.innerText = "CREATE ACCOUNT";
+
+      nameField.style.display = "flex";
+
+      bottomText.innerHTML = `
+        Already have an account?
+        <a href="#" id="openLogin">
+          Sign In
+        </a>
+      `;
+
+    }
+
+    /* BUTTON EVENTS */
+
+    loginBtn.addEventListener("click", showLogin);
+
+    registerBtn.addEventListener("click", showRegister);
+
+    /* BOTTOM LINK EVENTS */
+
+    document.addEventListener("click", function (e) {
+
+      if (e.target.id === "openRegister") {
+
+        e.preventDefault();
+
+        showRegister();
+      }
+
+      if (e.target.id === "openLogin") {
+
+        e.preventDefault();
+
+        showLogin();
+      }
+
+    });
+
+  </script>
+<div class="cart-sidebar" id="cartSidebar">
+
+  <div class="cart-header">
+
+    <h2>Your Cart</h2>
+
+    <span onclick="closeCart()">✕</span>
+
+  </div>
+
+  <div id="cartItems"></div>
+
+</div>
+</body>
+
+</html>

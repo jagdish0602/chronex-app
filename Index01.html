@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHRONEX</title>
+  <link rel="stylesheet" href="style01.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet">
+
+  <!-- icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="logo">CHRONEX</div>
+    <ul class="nav-link">
+      <li><a href="Index01.html">HOME</a></li>
+      <li><a href="Collections.html">SHOP</a></li>
+      <li><a href="Collections.html">COLLECTIONS</a></li>
+      <li><a href="ADMIN.html">ADMIN</a></li>
+    </ul>
+    <div class="icons">
+      <a href="#"><i class=" fa-brands fa-sistrix"></i></a>
+      <a href="user.html"><i class="fa-regular fa-user"></i></a>
+      <a href="#"><i class="fa-regular fa-heart"></i></a>
+      <a href="#"  onclick="openCart()"><i class="fa-solid fa-bag-shopping"></i></a>
+    </div>
+  </nav>
+
+  <section class="hero-s">
+    <video autoplay loop muted class="hero-bg-video">
+      <source src="Video/video_20260518_203407_edit.mp4">
+    </video>
+    <div class="video-overlay"></div>
+
+    <div class="hero-content">
+      <p class="subtitle"> MAISON CHRONEX - EST. 1947</p>
+      <h1>Time, redefined <span class="italic-text">in silver</span></h1>
+      <p class="description">A generation of Swiss horology.
+        Hand-finished in Geneva, engineered in for the discerning collector.
+      </p>
+      <div class="hero-btn">
+        <button class="primary-btn">DISCOVER THE COLLECTIONS &rarr;</button>
+        <button class="secondary-btn">THE ATELIER </button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <h3>77</h3>
+          <p>YEARS</p>
+        </div>
+        <div class="stat-item">
+          <h3>12</h3>
+          <p>ATELIERS</p>
+        </div>
+        <div class="stat-item">
+          <h3>88</h3>
+          <p>EDITIONS</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker-bar">
+    <div class="ticker-wrapper">
+      <div class="ticker-group">
+        <span>HAND-FINISHED&nbsp;✦&nbsp;LIMITED EDITIONS&nbsp;✦&nbsp;LIFETIME
+          WARRANTY&nbsp;✦&nbsp;
+          Geneva Atelier&nbsp;✦&nbsp;Swiss made&nbsp;✦&nbsp;</span>
+      </div>
+      <div class="ticker-group">
+        <span>HAND-FINISHED&nbsp;✦&nbsp;LIMITED EDITIONS&nbsp;✦&nbsp;LIFETIME
+          WARRANTY&nbsp;✦&nbsp;
+          Geneva Atelier&nbsp;✦&nbsp;Swiss made&nbsp;✦&nbsp;</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <div>
+      <p class="section-tag">FEATURED</p>
+      <h2>Signature Timepieces</h2>
+    </div>
+    <a href="#" class="view-all">VIEW ALL &rarr;</a>
+  </div>
+
+  <div class="products-grid">
+    <div class="product-card">
+      <div class="img-box">
+        <span class="badge">NEW</span>
+        <i class="fa-regular fa-heart heart-icon"onclick="toggleWishlist(this,'Abyss Diver 300')"></i>
+        <img src="assets/b072a505-6c2a-4635-8a5f-e37c66bd279d.jpeg" alt="Watch 1">
+      </div>
+      <div class="product-info">
+        <div>
+          <p class="category">MARINE</p>
+          <h4>Abyss Diver 300</h4>
+        </div>
+        <p class="price">₹38,999</p>
+      </div>
+        <button class="cart-btn" onclick="addToCart('Abyss Diver 300',38,999)">
+          ADD TO CART
+        </button>
+    </div>
+
+    <div class="product-card">
+      <div class="img-box">
+        <i class="fa-regular fa-heart heart-icon" onclick="toggleWishlist(this,'Regent Chronograph')"></i>
+        <img src="assets/e9b5d447-7688-46b2-a060-7def2f47a832.jpeg" alt="Watch 2">
+      </div>
+      <div class="product-info">
+        <div>
+          <p class="category">HERITAGE</p>
+          <h4>Regent Chronograph</h4>
+        </div>
+        <p class="price">₹19,999</p>
+      </div>
+       <button class="cart-btn" onclick="addToCart('Regent Chronograph',19,999)">
+          ADD TO CART
+        </button>
+    </div>
+
+    <div class="product-card">
+      <div class="img-box">
+        <i class="fa-regular fa-heart heart-icon" onclick="toggleWishlist(this,'Noir Classiq')"></i>
+        <img src="assets/61e0c9bb-c4c9-4650-9ffa-5c3e1daa48b5.jpeg" alt="Watch 2">
+      </div>
+      <div class="product-info">
+        <div>
+          <p class="category">HERITAGE</p>
+          <h4>Noir Classiq</h4>
+        </div>
+        <p class="price">₹18,200</p>
+      </div>
+       <button class="cart-btn" onclick="addToCart('Noir Classiq',18,200)">
+          ADD TO CART
+        </button>
+    </div>
+  </div>
+
+  <section class="section">
+
+    <div class="subtitle">COLLECTIONS</div>
+
+    <h1 class="title">Four Worlds, One Maison</h1>
+
+    <div class="grid">
+
+      <div class="card">
+        <div>
+          <h2>Marine</h2>
+          <p>Built for the deep</p>
+        </div>
+
+        <div class="bottom">
+          <span class="pieces">1 PIECES</span>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div>
+          <h2>Heritage</h2>
+          <p>Timeless craft</p>
+        </div>
+
+        <div class="bottom">
+          <span class="pieces">2 PIECES</span>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div>
+          <h2>Voyager</h2>
+          <p>For the journey</p>
+        </div>
+
+        <div class="bottom">
+          <span class="pieces">2 PIECES</span>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div>
+          <h2>Atelier</h2>
+          <p>Limited masterworks</p>
+        </div>
+
+        <div class="bottom">
+          <span class="pieces">1 PIECES</span>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="features">
+
+      <div class="feature">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+            fill="#e3e3e3">
+            <path
+              d="M395-475q-35-35-35-85t35-85q35-35 85-35t85 35q35 35 35 85t-35 85q-35 35-85 35t-85-35ZM240-40v-309q-38-42-59-96t-21-115q0-134 93-227t227-93q134 0 227 93t93 227q0 61-21 115t-59 96v309l-240-80-240 80Zm410-350q70-70 70-170t-70-170q-70-70-170-70t-170 70q-70 70-70 170t70 170q70 70 170 70t170-70ZM320-159l160-41 160 41v-124q-35 20-75.5 31.5T480-240q-44 0-84.5-11.5T320-283v124Zm160-62Z" />
+          </svg></div>
+        <h3>Master Crafted</h3>
+        <p>
+          Each timepiece, hand-assembled by certified artisans.
+        </p>
+      </div>
+
+      <div class="feature">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+            fill="#e3e3e3">
+            <path
+              d="M480-120 80-600l120-240h560l120 240-400 480Zm-95-520h190l-60-120h-70l-60 120Zm55 347v-267H218l222 267Zm80 0 222-267H520v267Zm144-347h106l-60-120H604l60 120Zm-474 0h106l60-120H250l-60 120Z" />
+          </svg></div>
+        <h3>Rare Materials</h3>
+        <p>
+          904L steel, 18k gold, ethically sourced precious stones.
+        </p>
+      </div>
+
+      <div class="feature">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+            fill="#e3e3e3">
+            <path
+              d="M480-480Zm0 400q-139-35-229.5-159.5T160-516v-244l320-120 320 120v120h-80v-65l-240-90-240 90v189q0 121 68 220t172 132q7-2 13-4t12-5q12 17 27 32.5t32 28.5q-20 11-41 19t-43 13Zm160 0-23-92q-36-26-56.5-64.5T540-320q0-45 20.5-83.5T617-468l23-92h160l23 92q36 26 56.5 64.5T900-320q0 45-20.5 83.5T823-172l-23 92H640Zm151-169q29-29 29-71t-29-71q-29-29-71-29t-71 29q-29 29-29 71t29 71q29 29 71 29t71-29Z" />
+          </svg></div>
+        <h3>Lifetime Service</h3>
+        <p>
+          Complimentary maintenance, for life.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Testimonials Section -->
+  <section class="testimonials-section">
+    <div class="container">
+      <p class="section-subtitle">TESTIMONIALS</p>
+      <h2 class="section-title">Voices of the Maison</h2>
+
+      <div class="testimonial-grid">
+
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            An object of obsessive precision. The Abyss is unlike anything in my collection.
+          </p>
+
+          <div class="divider"></div>
+
+          <h4>Marcus L.</h4>
+          <span>COLLECTOR, LONDON</span>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            CHRONEX understands restraint. The Noir Classique is what a dress watch should be.
+          </p>
+
+          <div class="divider"></div>
+
+          <h4>Adriana V.</h4>
+          <span>ARCHITECT, MILAN</span>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            The skeleton tourbillon is a meditation. I lose hours watching it move.
+          </p>
+
+          <div class="divider"></div>
+
+          <h4>Hiro T.</h4>
+          <span>CURATOR, TOKYO</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="newsletter-section">
+    <div class="newsletter-content">
+      <p class="newsletter-subtitle">THE INNER CIRCLE</p>
+
+      <h2>
+        Receive private access to limited editions
+      </h2>
+
+      <p class="newsletter-text">
+        Be first to discover new releases, atelier stories, and members-only allocations.
+      </p>
+
+      <form class="newsletter-form">
+        <input type="email" placeholder="your@email.com">
+        <button type="submit">SUBSCRIBE</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-top">
+
+      <div class="footer-brand">
+        <h2>CHRONEX</h2>
+        <p>
+          Master craftsmanship from Geneva. Every timepiece,
+          a quiet rebellion against time.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h4>MAISON</h4>
+        <a href="#">Heritage</a>
+        <a href="#">Atelier</a>
+        <a href="#">Craftsmanship</a>
+      </div>
+
+      <div class="footer-links">
+        <h4>BOUTIQUE</h4>
+        <a href="#">Shop All</a>
+        <a href="#">Cart</a>
+        <a href="#">Wishlist</a>
+      </div>
+
+      <div class="footer-links">
+        <h4>SERVICE</h4>
+        <a href="#">Contact</a>
+        <a href="#">Warranty</a>
+        <a href="#">Shipping</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 CHRONEX Manufactures. All rights reserved.</p>
+      <span>GENEVA — SWITZERLAND</span>
+    </div>
+    <div class="social-media"> 
+       <a href=""><i class="fa-brands fa-instagram"></i></a>
+       <a href=""><i class="fa-brands fa-square-facebook"></i></a>
+        
+    </div>
+  </footer>
+
+<div class="cart-sidebar" id="cartSidebar">
+
+  <div class="cart-header">
+
+    <h2>Your Cart</h2>
+
+    <span onclick="closeCart()">✕</span>
+
+  </div>
+
+  <div id="cartItems"></div>
+
+</div>
+<script src="script.js"></script>
+
+</body>
+
+</html>
